@@ -1,0 +1,102 @@
+    body 
+    {
+        margin: 0;
+        font-family: 'Segoe UI', sans-serif;
+        height: 100vh;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fbc2eb, #a6c1ee);
+        background-size: 400% 400%;
+        animation: gradientBG 15s ease infinite;
+    }
+
+    @keyframes gradientBG {
+        0% {background-position: 0% 50%;}
+        50% {background-position: 100% 50%;}
+        100% {background-position: 0% 50%;}
+    }
+
+    .card {
+        text-align: center;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 50px;
+        border-radius: 25px;
+        box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+        max-width: 400px;
+        transition: transform 0.5s ease;
+    }
+
+    .card h1 {
+        color: #e91e63;
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    .card p {
+        font-size: 1.1rem;
+        margin-bottom: 30px;
+    }
+
+    button {
+        padding: 15px 35px;
+        font-size: 1rem;
+        border: none;
+        border-radius: 50px;
+        background: linear-gradient(45deg, #ff4081, #ff80ab);
+        color: white;
+        cursor: pointer;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        transition: all 0.3s ease;
+    }
+
+    button:hover {
+        transform: scale(1.1);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+
+    .popup {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        background: rgba(255,255,255,0.95);
+        padding: 40px;
+        border-radius: 25px;
+        box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+        text-align: center;
+        transition: all 0.5s ease;
+        z-index: 100;
+    }
+
+    .popup.show {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    .popup img {
+        width: 150px;
+        margin-bottom: 20px;
+    }
+
+    .typed-text {
+        font-size: 1.2rem;
+        color: #e91e63;
+        min-height: 1.5em;
+    }
+
+    .flower {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-image: url('https://i.imgur.com/NpS2S8T.png');
+        background-size: cover;
+        top: -30px;
+        pointer-events: none;
+        animation: fall linear forwards;
+    }
+
+    @keyframes fall {
+        0% {transform: translateY(0) rotate(0deg);}
+        100% {transform: translateY(100vh) rotate(360deg);}
+    }
